@@ -22,25 +22,58 @@ const createGroupBtn =
 
 
 
+const contentSlider =
+    document.getElementById("contentSlider");
+
+const tabsBtn =
+    document.getElementById("tabsBtn");
+
+const groupsBtn =
+    document.getElementById("groupsBtn");
+
+const noteInputEl =
+    document.querySelector(".note-input-el");
+
+const actionBtn1 =
+    document.querySelector(".action-btn-1");
+
+const actionBtn2 =
+    document.querySelector(".action-btn-2");
+
+function setPanelView(showGroups) {
+    if (!contentSlider || !tabsBtn || !groupsBtn) {
+        return;
+    }
+
+    contentSlider.classList.toggle("show-groups", showGroups);
+    tabsBtn.classList.toggle("active", !showGroups);
+    groupsBtn.classList.toggle("active", showGroups);
+}
+
+if (tabsBtn) {
+    tabsBtn.addEventListener("click", () => setPanelView(false));
+}
+
+if (groupsBtn) {
+    groupsBtn.addEventListener("click", () => setPanelView(true));
+}
+
 // INITIAL RENDER
 renderMyTabs();
 renderMyGroups();
 
-// NORMAL TAB - ENTER
+if (noteInputEl) {
+    noteInputEl.addEventListener("keydown", (event) => {
 
+        if (event.key === "Enter") {
 
-noteInputEl.addEventListener("keydown", (event) => {
+            event.preventDefault();
+            addingTab();
 
-    if (event.key === "Enter") {
+        }
 
-        event.preventDefault();
-
-        addingTab();
-
-    }
-
-});
-
+    });
+}
 
 // ADD NORMAL TAB
 
@@ -68,6 +101,7 @@ function addingTab(forceUrlOnly = false) {
         );
 
         renderMyTabs();
+        setPanelView(false);
 
         if (!forceUrlOnly) {
             noteInputEl.value = "";
@@ -213,11 +247,12 @@ deleteBtn.addEventListener("click", () => {
 
 // CREATE GROUP
 
-createGroupBtn.addEventListener("click", () => {
-
-    createGroup();
-
-});
+if (createGroupBtn) {
+    createGroupBtn.addEventListener("click", () => {
+        setPanelView(true);
+        createGroup();
+    });
+}
 
 // CREATE GROUP FROM ALL OPEN CHROME TABS
 
