@@ -1,0 +1,17 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "logo.png",
+         "16": "logo.png",
+         "32": "logo.png",
+         "48": "logo.png"
+      },
+      "default_popup": "index.html"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzLpDmzTGbhBKGnHBWYjEKNYCg/hwGaKzWNFOL6iFhPbdUuMbXxfTvAtBqq0XzMpDr46PczO+Io/2sAHfsQtSh8gixNYDQmJTK1SRubYuQLGLSRT3lYzJln3t2tF7+LNsDAb85RcwQOO9hlbuPjq/1Fz2flhxecKxkC9BOTUOsVeaokMaVOBwMT2y8Ce4AMtnN0vFmrF9Wu1eaLYDmx+zLoRz2BZQT2qIe6p6PDQYhbZyUvrAEq0L5YjO1cJA8FHmIt8QoCXAYhoJVhQqCKmmhaFuY4e8kmA2gawNwRruGn+0vRM4nDaALpU8vLwnxXV269iFTKXN0esDg7tNi3u63QIDAQAB",
+   "manifest_version": 3,
+   "name": "TabsVault",
+   "permissions": [ "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.1"
+}
